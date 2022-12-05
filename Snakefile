@@ -38,7 +38,7 @@ rule run_simulation_:
 # Third step: calculate the metrics of the outcomes from the simulations
 rule calculate_metrics_:
     input: "results/simulation_results/{use_case}.RDS"
-    output: "results/metric_results/{use_case}.csv"
+    output: report("results/metric_results/{use_case}.csv", category = "Metric Values")
     script: "scripts/{wildcards.use_case}/calculate_metrics.R"
 
 
@@ -53,5 +53,5 @@ def input_plot_metrics(wildcards):
 
 rule plot_metrics_:
     input: input_plot_metrics
-    output: "results/plots/{use_case}_{scenario}_{metric}.png"
+    output: report("results/plots/{use_case}_{scenario}_{metric}.png", category="Metric Plots", subcategory="{use_case}")
     script: "scripts/{wildcards.use_case}/plot_metrics.R"
