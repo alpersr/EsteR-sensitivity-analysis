@@ -7,18 +7,27 @@ With this code, the plots in the simulation report in Multimedia Appendix 1 were
 
 ## Reproducing the Sensitivity Analysis with Snakemake
 ### Requirements
-tbd
+The requirements.yml file can be used to create a conda environment with the snakemake package for workflow management
+and all required R packages for the analysis. The environment can be created via
+
+    mamba env create -f requirements.yml
+(or *conda* if *mamba* is not installed) and activated via
+
+    conda activate ester_env
 
 ### Running the whole analysis automatically
 ![Figure 1. DAG of Snakemake jobs.](dag.svg)
 
 Above you can see the graph of jobs with their respective wildcards and the dependencies between them to recreate 
-the plots from the simulation report. In order to execute all of them type 
+the plots from the simulation report. In order to create the DAG type
+
+    snakemake --dag | dot -Tsvg > dag.svg
+and to execute all jobs type 
 
     snakemake -c1 all 
 
 into your terminal. (-c1 can be replaced by any other number of cores you want to use. With one core, 
-the analysis takes about 20 minutes to complete.)
+the analysis takes about 15-20 minutes to complete.)
 
 Inside the *EsteR-sensitivity-analysis* folder, Snakemake will automatically create a new folder called *results* 
 where all simulation outcomes, calculated metrics and plots will be saved.

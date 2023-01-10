@@ -14,7 +14,7 @@ if (snakemake@wildcards[["metric"]] == "deltapred") {
               geom_point(aes(x = defaults$param1, y = defaults$param2), shape = 0, color = "red", stroke = 1.2)+
               scale_shape_manual(labels = c("12/19-06/20", "07/20-12/20", "01/21-06/21"), values=c(0,4,2))+
               labs(x = "Parameter 1: E(X)", y = expression("Parameter 2:"~mu^{"*"}), fill = expression(paste(Delta,"pred")), shape = "Time of \ndata collection",
-                   caption = "Difference of predicted total infections after a group event. The reference parameters are marked in red.") +
+                   caption = "Difference of predicted total infections after a group event. The reference parameters \nare marked in red.") +
               theme(plot.caption = element_text(hjust = 0), plot.caption.position = "plot", axis.text=element_text(size=11),
                     axis.title=element_text(size=12))
 
