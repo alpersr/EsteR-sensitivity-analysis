@@ -18,8 +18,18 @@ get_infectiousness_density <- function(symptom_begin_date, dist_type, param1, pa
 calculate_qstart_qend <- function(probability, df) {
   set.seed(123) # because hdr random simulation
   hdr_df <- hdr(den = data.frame(x = 1:length(df$distribution), y = df$distribution), prob = probability*100)$hdr
-  qstart <- (hdr_df[1,1] - 1)/24
-  qend   <- (hdr_df[1,2] - 1)/24
+   if (hdr_df[1,1] == 1) {
+    qstart <- (hdr_df[1,2] - 1)/24
+    qend   <- (hdr_df[1,3] - 1)/24
+  }
+  else {
+    qstart <- (hdr_df[1,1] - 1)/24
+    qend   <- (hdr_df[1,2] - 1)/24
+  }
+  if (qstart > qend){
+    return(list("qstart" = qend, "qend" = qstart))
+  }
+
   return(list("qstart" = qstart, "qend" = qend))
 }
 
