@@ -71,3 +71,17 @@ in each use case separately. Only specific combinations of wildcards are allowed
    * {use_case}: *group_quarantine*
      * {scenario}: *childcare* or *school* or *sensitivity*
      * {metric}: *deltaprob*
+    
+## Authors and Contributors
+**Authors**
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alpersr"><img src="https://avatars.githubusercontent.com/u/100788716?v=4" width="100px;" alt="Rieke Alpers"/><br /><sub><b>Rieke Alpers</b></sub></a><br /></td>
+    </tr>
+  </tbody>
+</table>
+
+**Contributors**
+
+(Contributing guidelines will follow)
