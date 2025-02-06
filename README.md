@@ -1,8 +1,8 @@
 # Evaluation of the EsteR Toolkit: Sensitivity Analysis of the Statistical Models
 
 This repository contains the data and code for the sensitivity analysis of the statistical models used in the EsteR 
-toolkit which is described in Alpers et al. 2022: *Evaluation of the Ester Toolkit for COVID-19 Decision Support:
-Sensitivity Analysis and Usability Study*. JMIR Preprints. DOI: 10.2196/preprints.44549 (Currently under review).
+toolkit which is described in Alpers et al. 2023: *Evaluation of the Ester Toolkit for COVID-19 Decision Support:
+Sensitivity Analysis and Usability Study*. JMIR Formative Research. DOI: 10.2196/44549.
 With this code, the plots in the simulation report in Multimedia Appendix 1 were created.
 
 ## Reproducing the Sensitivity Analysis with Snakemake
